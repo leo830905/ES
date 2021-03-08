@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const person1 = {
+            name: "Jon",
+            age: 50,
+            gender: "Male",
+            data: { a: 10, b: 50 },
+        }
+
+        const person2 = person1;
+
+        const person3 = { ...person1 };
+        const person4 = {};
+        for (let i in person1) {
+            person4[i] = person1[i];
+        }
+
+        const person5 = JSON.parse(JSON.stringify(person1));   //deep-copy 最表層
+        // person4 = person3
+
+
+        person1.name = "David";
+        person1.age = 150;
+        person1.data.a = 10000;
+
+
+        console.log(person1);
+        console.log(person2);
+        console.log(person3);
+        console.log(person4);
+        console.log(person5);
+
+        const a1 = {
+            name: "bill",
+            age: 50,
+        }
+        const a2 = {
+            name: "phil",
+            age: 12,
+        }
+        const a3 = {
+            name: "mike",
+            age: 99,
+        }
+
+        a1.next = a2;
+        a2.next = a3;
+        a3.next = a1;
+
+        console.log(JSON.stringify(a1));  //前面造成循環,就無法用deep-copy
+
+    </script>
+</body>
+
+</html>

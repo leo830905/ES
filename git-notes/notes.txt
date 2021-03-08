@@ -1,0 +1,11 @@
+git config --global user.name Leo
+git config --global user.email leo19940905@gmail.com
+
+git config -l
+
+git init
+
+git remote add origin https://github.com/leo830905/ES.git
+git push -u origin master
+
+123123

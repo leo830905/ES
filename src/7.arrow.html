@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const f1 = a => { a * a };  //undefined
+        const f2 = a => a * a;
+        console.log(f1);
+        console.log(f2);
+
+
+        const obj = {
+            v: this,
+            f3: () => this,
+            f4: function () {
+                return this;
+            },
+            f5() {
+                return this;
+            }
+        }
+        console.log(obj.v);
+        console.log(obj.f3());
+        console.log(obj.f4());
+        console.log(obj.f5());
+        console.log("-------------------------")
+
+        const a = obj.f3();
+        const b = obj.f4();
+        const c = obj.f5();
+
+        console.log(a);
+        console.log(b);
+        console.log(c);
+    </script>
+</body>
+
+</html>

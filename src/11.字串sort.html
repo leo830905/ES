@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const a = "各地有雨氣溫回升 週六變天愈晚降雨機率愈高";
+
+        const arr = a.split("");
+        console.log(arr.join(","))
+
+        const arr2 = arr.sort();
+        console.log(arr2.join(","));
+
+
+
+        const b = [];
+
+        for (let i = 0; i < 20; i++) {
+            b.push(Math.floor(Math.random() * 100));
+        }
+        const b1 = b.sort();
+        console.log(b1.join(","));
+
+
+    </script>
+</body>
+
+</html>

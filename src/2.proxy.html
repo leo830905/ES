@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const MyTarget = {
+            name: "Tom",
+            age: 25,
+            ageIncrease: function () {
+                this.Age++;
+            }
+        }
+
+        const MyHandler = {
+            get: function (target, prop) {
+                console.log(target, prop);
+                return target[prop];
+            },
+            set: function (target, prop, value) {
+                console.log(target, prop, value);
+
+                if (prop === "age" && isNaN(value / 1)) {
+                    throw new ReferenceError("靠北");
+                }
+                else {
+                    target[prop] = value;
+                }
+            }
+        }
+        const proxy = new Proxy(MyTarget, MyHandler);
+
+        console.log(proxy.name);
+        proxy.age = "fji";
+
+        console.log(proxy.age);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #t1,
+        #t1 td {
+            border: 3px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table id="t1"></table>
+
+    <select id="sel">
+        <option value="age1">年紀由小到大</option>
+        <option value="age2">年紀由大到小</option>
+        <option value="name1">姓名由小到大</option>
+        <option value="name2">姓名由大到小</option>
+
+    </select>
+
+
+
+
+
+    <script>
+        const people = [{
+            name: "bill",
+            age: 50,
+        },
+        {
+            name: "ball",
+            age: 50,
+        },
+        {
+            name: "phil",
+            age: 12,
+        },
+        {
+            name: "mike",
+            age: 99,
+        },
+        {
+            name: "Bob",
+            age: 35,
+        },
+        ]
+
+        const render = () => {
+            document.querySelector("#t1").innerHTML = people.map((el) => {
+                return `<tr>
+                <td>${el.name}</td>
+                <td>${el.age}</td>
+            </tr>`
+            }).join("");
+
+        }
+        render();
+
+
+        const sorting =
+        {
+            "age1": (a, b) => {
+                return a.age > b.age
+            },
+
+            "age2": (a, b) => {
+                return a.age < b.age
+            },
+
+            "name1": (a, b) => {
+                return a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1;
+            },
+
+            "name2": (a, b) => {
+                return a.name.toLowerCase() < b.name.toLowerCase() ? 1 : -1;
+            },
+        }
+
+        const sel = document.querySelector("#sel");
+// sel.addEventListener("change",)
+
+
+
+
+
+
+        // people.sort((a, b) => {
+        //     return a.name > b.name ? 1 : -1;     //大寫排前面
+        // })
+
+
+        // people.sort((a, b) => {
+        //     return a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1;    //不區分大小寫排序
+        // })
+
+    </script>
+</body>
+
+</html>

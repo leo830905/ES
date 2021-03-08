@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div id="info"></div>
+
+
+    <script>
+
+
+
+        const people = [{
+            name: "bill",
+            age: 50,
+        },
+        {
+            name: "ball",
+            age: 50,
+        },
+        {
+            name: "phil",
+            age: 12,
+        },
+        {
+            name: "mike",
+            age: 99,
+        },
+        {
+            name: "Bob",
+            age: 35,
+        },
+        ]
+
+
+        const map = new Map();
+        // const MyClick = function (event) {
+
+        //     console.log(map.get(event.target));     //綁外面info就要用target
+        // }
+
+
+
+        const MyClick = function (event) {
+
+            console.log(map.get(event.currentTarget));
+        }
+
+
+        for (let i of people) {
+
+            const el = document.createElement("div");
+            el.style.width = "60px";
+            el.style.height = "60px";
+            el.style.lineHeight = "60px";
+            el.style.position = "absolute";
+            el.style.borderRadius = "50%";          //角度        飽和度 明亮度
+            el.style.backgroundColor = `hsl(${Math.random() * 360},100%,50%)`;  //hsl製造隨機顏色
+            el.style.textAlign = "center"
+            el.style.top = Math.random() * 500 + "px";
+            el.style.left = Math.random() * 600 + "px";
+            el.innerHTML = i.name;
+            document.querySelector("#info").appendChild(el);
+            map.set(el, i);
+            el.addEventListener("click", MyClick)
+        }
+        // document.querySelector("#info").addEventListener("click", MyClick);
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "ES6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "transpile": "npx babel src --out-dir dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leo830905/ES6-Practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leo830905/ES6-Practice/issues"
+  },
+  "homepage": "https://github.com/leo830905/ES6-Practice#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.8",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.13.9"
+  }
+}

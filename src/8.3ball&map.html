@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <div id="info"></div>
+    <script>
+        const info = document.querySelector("#info");
+
+
+
+
+        const ball = b => {
+            return `<div class="ball" 
+style=" border-radius:50%;
+        text-align:center;
+        width:${b.w || 60}px;
+        height:${b.w || 60}px;
+        line-height:${b.w || 60}px;
+        top:${b.x || 20}px;
+        left:${b.y || 100}px;
+        background-color:${b.bg || "red"};
+">${b.text || 666}</div>`
+        }
+
+        info.innerHTML += ball({ x: 40, y: 30, w: 100, bg: "green", text: "lol" })
+        info.innerHTML += ball({ x: 60, y: 40, w: 120, bg: "red", text: "ha" })
+        info.innerHTML += ball({ x: 80, y: 50, w: 140, bg: "blue", text: "he" })
+
+
+        arr = [
+            { x: 100, y: 50, w: 100, bg: "yellow", text: "lol" },
+            { x: 150, y: 70, w: 120, bg: "yellow", text: "ha" },
+            { x: 200, y: 90, w: 140, bg: "yellow", text: "he" },
+        ]
+
+        info.innerHTML += arr.map((el) => ball(el)).join("");
+
+        console.log(arr.map((el) => ball(el)));
+
+
+
+    </script>
+</body>
+
+</html>

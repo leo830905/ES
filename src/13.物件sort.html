@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const people = [{
+            name: "bill",
+            age: 50,
+        },
+        {
+            name: "ball",
+            age: 50,
+        },
+        {
+            name: "phil",
+            age: 12,
+        },
+        {
+            name: "mike",
+            age: 99,
+        },
+        {
+            name: "Bob",
+            age: 35,
+        },
+        ]
+
+        // people.sort((a, b) => {                  //按照年齡排序
+        //     return a.age - b.age;
+        // })
+
+        // people.sort((a, b) => {
+        //     return a.name > b.name ? 1 : -1;     //大寫排前面
+        // })
+
+
+        people.sort((a, b) => {
+            return a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1;    //不區分大小寫排序
+        })
+
+        console.log(people)
+
+    </script>
+</body>
+
+</html>

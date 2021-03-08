@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="info"></div>
+
+    <script>
+        const map = new Map();
+        const people = [{
+            name: "bill",
+            age: 50,
+        },
+        {
+            name: "ball",
+            age: 50,
+        },
+        {
+            name: "phil",
+            age: 12,
+        },
+        {
+            name: "mike",
+            age: 99,
+        },
+        {
+            name: "Bob",
+            age: 35,
+        },
+        ]
+
+        const MyClick = function (event) {
+
+            const a = $(event.target);
+            console.log(map.get(a[0]))
+        }
+
+
+        for (let i of people) {
+            const el = $(`<div class="ball">${i.name}</div>`);
+
+            el.css({
+                width: "60px",
+                height: "60px",
+                lineHeight: "60px",
+                position: "absolute",
+                borderRadius: "50%",
+                backgroundColor: `hsl(${Math.random() * 360},100%,50%)`,
+                top: Math.random() * 500 + "px",
+                left: Math.random() * 600 + "px",
+                textAlign: "center",
+            })
+
+            $("#info").append(el[0]);
+            map.set(el[0], i);
+
+        }
+        // document.querySelector("#info").addEventListener("click", MyClick);
+        $("#info").on("click", MyClick);
+        const b = 123456;
+
+
+    </script>
+</body>
+
+</html>
