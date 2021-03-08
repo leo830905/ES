@@ -12,7 +12,7 @@
     <script>
         new Promise((resolve, reject) => {
             setTimeout(function () {
-                resolve("YEAH")
+                reject("YEAH")
             }, 1000 + Math.random() * 1000)
 
         })
@@ -23,7 +23,10 @@
             .then(function (r) {
                 console.log(`result=${r}`)
             })
+            .catch(ex => {                           //模擬丟reject才能抓
+                console.log(`ex:${ex}`)
 
+            })
 
     </script>
 </body>
